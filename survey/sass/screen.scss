@@ -1,0 +1,317 @@
+$header_color2: rgba(255, 62, 0, 0.7);
+$header_color: #E05959;
+$indicator_color: #f50057;
+$indicator_color2: #ff9e80;
+// pattern mixin
+// ref: https://codepen.io/mariiinda/pen/dtehw
+@mixin pattern($bg-primary,$bg-secondary) {
+  background:
+    repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 1em,
+    rgba($bg-secondary,0.4) 0,
+    rgba($bg-secondary,0.1) 2em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-secondary,0.3) 0,
+    rgba($bg-secondary,0.2) 4em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-primary,0.6) 0,
+    rgba($bg-primary,0.2) 2em
+  ),
+  repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 1em,
+    rgba($bg-secondary,0.4) 0,
+    rgba($bg-secondary,0.1) 2em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-secondary,0.3) 0,
+    rgba($bg-secondary,0.2) 4em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-primary,0.4) 0,
+    rgba($bg-primary,0.1) 2em
+  ), #FFF;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+
+html {
+  height: 100%;
+  @include pattern(rgba(#ffE3E8, 0.1), rgba(#ffE3E8, 0.1));
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    //background: #fff3f8;
+}
+.google_map {
+    width: 100%;
+    height: 50vh;
+}
+body, html, * {
+    font-family: Open Sans,Helvetica Neue,Helvetica,Arial,Apple LiGothic,"微軟正黑體",Microsoft JhengHei!important;
+}
+
+#app {
+    //background-image: url(https://i.imgur.com/9fhJ8VX.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0 -500px;
+    background-size: 100%;
+}
+@keyframes jump {
+    0% {
+        transform: translate(0, -0.1em);
+    }
+    100% {
+        transform: translate(0, 0em);
+    }
+}
+@keyframes color_fade {
+    50% { color: white; }
+    0%,100% {color: #eff;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0; filter: blur(15px);}
+    100% {opacity: 1; filter: blur(0px);}
+}
+.header_pic {
+    overflow: hidden;
+    margin: 0; padding: 0;
+    margin-bottom: -15vh;
+    width: 100%; height: 120vh;
+    box-sizing: border-box;
+    font-family: 'Niconne', cursive!important;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+
+    @media (orientation: landscape) {
+        background-image: url(../img/header_horizontal.png);
+        background-size: cover;
+        background-position: center 70%;
+        color: white;
+        text-shadow: 0 2px 3px cyan;
+        $color: #b1ded8; $fade: 0.3; $u: 32px;
+        box-shadow:
+            0 1*$u 0 rgba($color, $fade),
+            0 2*$u 0 rgba($color, $fade),
+            0 3*$u 0 rgba($color, $fade),
+            0 4*$u 0 rgba($color, $fade);
+        &:before {
+            text-align: right;
+            width: 70vw;
+            right: 3vw; top: 10vh;
+            color: white;
+        }
+        &:after {
+            text-align: right;
+            top: 30vh;
+            width: 50vw;
+            right: 6vw;
+            text-shadow: 0 2px 3px #666;
+        }
+    }
+
+    @media (orientation: portrait) {
+        background-image: url(../img/header_vertical.png);
+        background-size: cover;
+        background-position: center 90%;
+        color: white;
+        text-shadow: 0 2px 3px #3f5a82;
+        $color: #a1a7a6; $fade: 0.3; $u: 32px;
+        box-shadow:
+            0 1*$u 0 rgba($color, $fade),
+            0 2*$u 0 rgba($color, $fade),
+            0 3*$u 0 rgba($color, $fade),
+            0 4*$u 0 rgba($color, $fade);
+        &:before {
+            text-align: center;
+            width: 90vw;
+            left: 5vw; top: 10vh;
+            color: white;
+        }
+        &:after {
+            text-align: center;
+            width: 60vw;
+            left: 20vw;
+            top: 24vh;
+            text-shadow: 0 1px 3px black;
+        }
+    }
+    &:before {
+        content: 'Save the Date!';
+        font-size: 15vmin;
+        display: inline-block;
+        position: absolute;
+        color: white;
+        white-space:nowrap;
+        animation: jump 0.5s linear infinite alternate-reverse;
+    }
+    &:after {
+        content: '2019/09/07 (Sat)';
+        font-family: 'Aldrich', sans-serif!important;
+        position: absolute;
+        font-size: 6vmin;
+        white-space:nowrap;
+        animation: color_fade 1s linear infinite;
+    }
+}
+
+.bottom_pic {
+    margin: 0; padding: 0;
+    width: 100%; height: 0;
+    padding-top: 50vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/flower.png);
+    background-size: cover;
+    background-position: center center;
+}
+.MuiFormControl-root:not(.default_shrink) .MuiInputLabel-shrink {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 24px;
+    white-space:nowrap;
+    transform: translate(0, -0.5em);
+    color: $header_color;
+}
+.MuiFormControl-root {
+    margin-top: 2em;
+}
+.MuiTypography-h4 {
+    color: $header_color2;
+}
+.MuiTypography-h5 {
+    color: $header_color;
+}
+.margin_top {
+    margin-top: 1.3em;
+}
+.ext_link {
+    text-decoration: none;
+    color: #f50057;
+    font-size: 0.8em;
+    svg {
+        vertical-align: middle;
+    }
+}
+.outer_grid {
+    &.MuiGrid-root{
+        width: 100%;
+        margin: 0;
+        position: relative;
+        z-index: 10;
+    }
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: $indicator_color2;
+    }
+    .MuiInput-underline::after {
+        border-bottom: 2px solid $indicator_color;
+    }
+    .MuiPaper-root {
+        color: rgba(150,150,150, 1);
+    }
+    .MuiInput-underline::before {
+        border-bottom-color: $indicator_color2;
+    }
+    .MuiInput-underline:hover:not(.Mui-disabled)::before {
+        border-bottom-color: $indicator_color2;
+    }
+    .MuiFormLabel-root.Mui-focused {
+        color: $header_color;
+    }
+    #baby_seat, #guest_count {
+        min-width: 10em;
+    }
+    .gutterTop {
+        margin-top: 2em;
+    }
+    .ps2 {
+        color: black;
+    }
+    .gutterTopBottom {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .gutterBottom {
+        margin-bottom: 2em;
+    }
+    .signature {
+        display: block;
+        text-align: right;
+        color: black;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+}
+.notice-item {
+    h6 {
+        color: $header_color;
+        margin-left: -1em;
+        display: inline-block;
+        padding: 0.2em 1em 0 0.5em;
+    }
+    color: black;
+}
+
+@keyframes error_highlight {
+    0% {
+        background-color: #FCC;
+    }
+    3% {
+        background-color: #FAA;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+.error {
+    .MuiInput-input {
+        animation: error_highlight 10s ease-in 1;
+    }
+    &.relation_text_outer {
+        animation: error_highlight 10s ease-in 1;
+    }
+}
+.toast_form {
+    position: fixed;
+    width: 100vw; height: 0;
+    bottom: 0; left: 0;
+    z-index: 10;
+    transform: translate(0, 32vh);
+    .toast_form_inner {
+        transition: transform 1.5s cubic-bezier(.19,1,.22,1);
+        width: 100vw; height: 100vh;
+        transform: translate(0, 0);
+        $color: #ffc3c8; $fade: 0.3; $u: -8vh;
+        background: rgba(#fca0b2, $fade*2);
+        position: relative;
+        box-shadow:
+            0 1*$u 0 rgba($color, $fade),
+            0 2*$u 0 rgba($color, $fade),
+            0 3*$u 0 rgba($color, $fade),
+            0 4*$u 0 rgba($color, $fade);
+        iframe {
+            display: block;
+            width: 90%;
+            height: 90%;
+            margin: 5vmin auto;
+            border: none;
+            border-radius: 32px;
+        }
+    }
+    &.active .toast_form_inner {
+        transform: translate(0, -132vh);
+    }
+}
