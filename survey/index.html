@@ -12,7 +12,7 @@
 
 	<meta name="description" content="是的是的~這不是愚人節玩笑，我們真的要結婚惹！給每一位曾參與我們成長過程的您，在這個屬於我們的重要日子，衷心希望能有您的參與" />
     <meta name="author" content="小胖子．吳草兒 Grassboy">
-    <meta id="theme_color" name="theme-color" content="#99c4de">
+    <meta id="theme_color" name="theme-color" content="">
 	<meta property="og:url" content="https://amber.grassboy.tw/survey" />
     <meta property="og:title" content="Grassboy &amp; Amber 婚禮出席統計">
     <meta property="og:type" content="article">
@@ -38,6 +38,45 @@
     <div id="app"></div>
     <script src="./bundle.js"></script>
     <script>
+        var delayFunction = function(mainFunc, option) {
+            var delayTimer;
+            option = option || {};
+            if (!option.delay) {
+                return mainFunc;
+            } else {
+                return function() {
+                    if (option.preventDefault) {
+                        arguments[0].preventDefault();
+                    }
+                    if (option.stopPropagation) {
+                        arguments[0].stopPropagation();
+                    }
+                    var that = this;
+                    var args = arguments;
+                    if (delayTimer) clearTimeout(delayTimer);
+                    delayTimer = setTimeout(function() {
+                        mainFunc.apply(that, args);
+                    },
+                    option.delay);
+                };
+            }
+        };
+        var changeTheme = delayFunction(function(){
+            var _$ = document.getElementById.bind(document);
+            var img = _$('header_pic');
+            if(window.scrollY > parseFloat(getComputedStyle(img).height)*0.8) {
+                _$('theme_color').content = 'pink';
+            } else if(screen && screen.orientation && screen.orientation.type.indexOf('landscape')!=-1) {
+                _$('theme_color').content = '#76c7bc';
+            } else if(screen && screen.orientation && screen.orientation.type.indexOf('portrait')!=-1) {
+                _$('theme_color').content = '#99c4de';
+            }
+        }, {
+            delay: 300
+        });
+        changeTheme();
+        window.addEventListener('scroll', changeTheme, true);
+        window.addEventListener('orientationchange', changeTheme, true);
     </script>
     <style>
     </style>

@@ -1,4 +1,163 @@
 @charset "UTF-8";
+.sticker-outer {
+  position: absolute;
+  z-index: -1; }
+  .sticker-outer.walk-outer {
+    left: calc(50vw - 138.75px);
+    top: 10vh; }
+    .sticker-outer.walk-outer:after {
+      display: block;
+      content: '表單正在送出…';
+      text-align: center;
+      font-size: 2.125rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.17;
+      letter-spacing: 0.00735em;
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, Apple LiGothic, "微軟正黑體", Microsoft JhengHei !important;
+      color: brown; }
+  .sticker-outer .walk {
+    position: relative;
+    background-image: url("../img/walk.png");
+    background-size: 400% 400%;
+    height: 0;
+    width: 100%;
+    padding-top: 81.08108%;
+    animation: frame370px300px15-4x4 1.5s step-end infinite;
+    display: block;
+    width: 277.5px; }
+
+@keyframes frame370px300px15-4x4 {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%; }
+  6.66667% {
+    background-position-x: -100%;
+    background-position-y: 0%; }
+  13.33333% {
+    background-position-x: -200%;
+    background-position-y: 0%; }
+  20% {
+    background-position-x: -300%;
+    background-position-y: 0%; }
+  26.66667% {
+    background-position-x: 0%;
+    background-position-y: -100%; }
+  33.33333% {
+    background-position-x: -100%;
+    background-position-y: -100%; }
+  40% {
+    background-position-x: -200%;
+    background-position-y: -100%; }
+  46.66667% {
+    background-position-x: -300%;
+    background-position-y: -100%; }
+  53.33333% {
+    background-position-x: 0%;
+    background-position-y: -200%; }
+  60% {
+    background-position-x: -100%;
+    background-position-y: -200%; }
+  66.66667% {
+    background-position-x: -200%;
+    background-position-y: -200%; }
+  73.33333% {
+    background-position-x: -300%;
+    background-position-y: -200%; }
+  80% {
+    background-position-x: 0%;
+    background-position-y: -300%; }
+  86.66667% {
+    background-position-x: -100%;
+    background-position-y: -300%; }
+  93.33333% {
+    background-position-x: -200%;
+    background-position-y: -300%; } }
+
+.ym {
+  background-image: url("../img/ym.png");
+  background-size: 400% 300%;
+  height: 0;
+  width: 100%;
+  padding-top: 100%;
+  animation: frame150px150px12-4x3 1s step-end infinite;
+  padding-top: 0;
+  width: 10em;
+  height: 10em;
+  display: inline-block; }
+
+@keyframes frame150px150px12-4x3 {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%; }
+  8.33333% {
+    background-position-x: -100%;
+    background-position-y: 0%; }
+  16.66667% {
+    background-position-x: -200%;
+    background-position-y: 0%; }
+  25% {
+    background-position-x: -300%;
+    background-position-y: 0%; }
+  33.33333% {
+    background-position-x: 0%;
+    background-position-y: -100%; }
+  41.66667% {
+    background-position-x: -100%;
+    background-position-y: -100%; }
+  50% {
+    background-position-x: -200%;
+    background-position-y: -100%; }
+  58.33333% {
+    background-position-x: -300%;
+    background-position-y: -100%; }
+  66.66667% {
+    background-position-x: 0%;
+    background-position-y: -200%; }
+  75% {
+    background-position-x: -100%;
+    background-position-y: -200%; }
+  83.33333% {
+    background-position-x: -200%;
+    background-position-y: -200%; }
+  91.66667% {
+    background-position-x: -300%;
+    background-position-y: -200%; } }
+
+.love_earth {
+  background-image: url("../img/love_earth.png");
+  background-size: 300% 300%;
+  height: 0;
+  width: 100%;
+  padding-top: 100%;
+  animation: frame160px160px7-3x3 1s step-end infinite;
+  padding-top: 0;
+  width: 10em;
+  height: 10em; }
+
+@keyframes frame160px160px7-3x3 {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%; }
+  14.28571% {
+    background-position-x: -100%;
+    background-position-y: 0%; }
+  28.57143% {
+    background-position-x: -200%;
+    background-position-y: 0%; }
+  42.85714% {
+    background-position-x: 0%;
+    background-position-y: -100%; }
+  57.14286% {
+    background-position-x: -100%;
+    background-position-y: -100%; }
+  71.42857% {
+    background-position-x: -200%;
+    background-position-y: -100%; }
+  85.71429% {
+    background-position-x: 0%;
+    background-position-y: -200%; } }
+
 html {
   height: 100%;
   background: repeating-linear-gradient(-45deg, transparent, transparent 1em, rgba(255, 227, 232, 0.4) 0, rgba(255, 227, 232, 0.1) 2em, transparent 0, transparent 1em, rgba(255, 227, 232, 0.3) 0, rgba(255, 227, 232, 0.2) 4em, transparent 0, transparent 1em, rgba(255, 227, 232, 0.6) 0, rgba(255, 227, 232, 0.2) 2em), repeating-linear-gradient(45deg, transparent, transparent 1em, rgba(255, 227, 232, 0.4) 0, rgba(255, 227, 232, 0.1) 2em, transparent 0, transparent 1em, rgba(255, 227, 232, 0.3) 0, rgba(255, 227, 232, 0.2) 4em, transparent 0, transparent 1em, rgba(255, 227, 232, 0.4) 0, rgba(255, 227, 232, 0.1) 2em), #FFF;
@@ -195,9 +354,7 @@ body, html, * {
 .outer_grid .signature {
   display: block;
   text-align: right;
-  color: black;
-  margin-top: 1em;
-  margin-bottom: 2em; }
+  color: black; }
 
 .notice-item {
   color: black; }
