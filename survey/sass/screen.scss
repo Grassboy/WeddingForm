@@ -363,6 +363,8 @@ body, html, * {
         $color: #ffc3c8; $fade: 0.3; $u: -8vh;
         background: rgba(#fca0b2, $fade*2);
         position: relative;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
         box-shadow:
             0 1*$u 0 rgba($color, $fade),
             0 2*$u 0 rgba($color, $fade),

@@ -393,6 +393,8 @@ body, html, * {
     transform: translate(0, 0);
     background: rgba(252, 160, 178, 0.6);
     position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
     box-shadow: 0 -8vh 0 rgba(255, 195, 200, 0.3), 0 -16vh 0 rgba(255, 195, 200, 0.3), 0 -24vh 0 rgba(255, 195, 200, 0.3), 0 -32vh 0 rgba(255, 195, 200, 0.3); }
     .toast_form .toast_form_inner iframe {
       display: block;
