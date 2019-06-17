@@ -68,6 +68,12 @@ $indicator_color2: #ff9e80;
             display: block;
             content: '表單正在送出…';
             text-align: center;
+            $color: #fdc;
+            text-shadow: 
+                0 1px 0 $color,
+                0 -1px 0 $color,
+                1px 0 0 $color,
+                -1px 0 0 $color;
             font-size: 2.125rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 400;
@@ -96,17 +102,6 @@ $indicator_color2: #ff9e80;
     width: $sw;
     height: $sw*$w/$h;
     display: inline-block;
-}
-.love_earth {
-    $img: "../img/love_earth.png";
-    $w: image-width($img)/3;
-    $h: image-height($img)/3;
-
-    @include sticker($img, $w, $h, 7, 3, 3, 1s);
-    padding-top: 0;
-    $sw: 10em;
-    width: $sw;
-    height: $sw*$w/$h;
 }
 html {
   height: 100%;
@@ -377,6 +372,7 @@ body, html, * {
             margin: 5vmin auto;
             border: none;
             border-radius: 32px;
+            overflow-y: auto;
         }
     }
     &.active .toast_form_inner {

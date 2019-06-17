@@ -9,6 +9,7 @@
       display: block;
       content: '表單正在送出…';
       text-align: center;
+      text-shadow: 0 1px 0 #fdc, 0 -1px 0 #fdc, 1px 0 0 #fdc, -1px 0 0 #fdc;
       font-size: 2.125rem;
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       font-weight: 400;
@@ -122,40 +123,6 @@
     background-position-y: -200%; }
   91.66667% {
     background-position-x: -300%;
-    background-position-y: -200%; } }
-
-.love_earth {
-  background-image: url("../img/love_earth.png");
-  background-size: 300% 300%;
-  height: 0;
-  width: 100%;
-  padding-top: 100%;
-  animation: frame160px160px7-3x3 1s step-end infinite;
-  padding-top: 0;
-  width: 10em;
-  height: 10em; }
-
-@keyframes frame160px160px7-3x3 {
-  0% {
-    background-position-x: 0%;
-    background-position-y: 0%; }
-  14.28571% {
-    background-position-x: -100%;
-    background-position-y: 0%; }
-  28.57143% {
-    background-position-x: -200%;
-    background-position-y: 0%; }
-  42.85714% {
-    background-position-x: 0%;
-    background-position-y: -100%; }
-  57.14286% {
-    background-position-x: -100%;
-    background-position-y: -100%; }
-  71.42857% {
-    background-position-x: -200%;
-    background-position-y: -100%; }
-  85.71429% {
-    background-position-x: 0%;
     background-position-y: -200%; } }
 
 html {
@@ -402,7 +369,8 @@ body, html, * {
       height: 90%;
       margin: 5vmin auto;
       border: none;
-      border-radius: 32px; }
+      border-radius: 32px;
+      overflow-y: auto; }
   .toast_form.active .toast_form_inner {
     transform: translate(0, -132vh); }
 
