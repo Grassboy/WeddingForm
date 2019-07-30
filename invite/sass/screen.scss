@@ -195,6 +195,9 @@ body {
         perspective-origin: center 60%;
         transition: all 0.3s ease-in;
         margin: 0 auto;
+        .basic-mode & {
+            transition: none;
+        }
     }
     .group {
         position: relative;
@@ -202,6 +205,9 @@ body {
         margin: auto;
         transform-style: preserve-3d;
         transition: all 0.6s ease-in;
+        .basic-mode & {
+            transition: none;
+        }
     }
     .card {
         position: absolute;
@@ -213,6 +219,9 @@ body {
         & > .back {
             transform-origin: center center;
             transform: rotateY(180deg) rotateZ(180deg);
+        }
+        .basic-mode & {
+            transition: none;
         }
     }
     .card-2019 {
