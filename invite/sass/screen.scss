@@ -90,12 +90,15 @@ $size: 800px;
     background-size: $size $size;
 }
 
-@import "sticker.scss";
-
 html {
   height: 100%;
   @include pattern(rgba(#ffE3E8, 0.1), rgba(#ffE3E8, 0.1));
   //@include pattern2();
+}
+.basic-mode {
+    .text1, .text2, .arches, .pillar, .couple1, .card1 {
+        display: none!important;
+    }
 }
 
 body {
