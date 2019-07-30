@@ -595,7 +595,7 @@ body .card-2019 {
   .button.icon-mail-open {
     display: none;
     right: 10px;
-    bottom: 10px; }
+    top: 10px; }
     [data-state="ready"] ~ .button.icon-mail-open {
       display: inline-block; }
 
