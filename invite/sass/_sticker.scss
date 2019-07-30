@@ -1,0 +1,17 @@
+@mixin sticker($img, $width, $height, $count, $x_count, $y_count, $duration: 1s) {
+    $animation_name: frame#{$width}#{$height}#{$count}-#{$x_count}x#{$y_count};
+    @keyframes #{$animation_name} {
+        @for $i from 0 to $count {
+            #{100%*($i/$count)} {
+                background-position-x: ($i % $x_count)*-1*100%;
+                background-position-y: floor($i / $x_count)*-1*100%;
+            }
+        }
+    }
+    background-image: url($img);
+    background-size: #{100% * $x_count} #{100% * $y_count};
+    height: 0;
+    width: 100%;
+    padding-top: #{$height / $width * 100}#{"%"};
+    animation: $animation_name $duration step-end infinite;
+}
