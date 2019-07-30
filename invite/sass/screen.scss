@@ -787,6 +787,7 @@ body {
     }
 }
 .button {
+    cursor: pointer;
     font-size: 3em;
     transition: opacity 0.3s ease-in;
     display: inline-block;

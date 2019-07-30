@@ -572,6 +572,7 @@ body .card-2019 {
     height: 100%; }
 
 .button {
+  cursor: pointer;
   font-size: 3em;
   transition: opacity 0.3s ease-in;
   display: inline-block;
