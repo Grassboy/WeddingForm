@@ -59,15 +59,18 @@ $(function(){
         })
         .on(vclick, '.button', function(){
             var $this = $(this);
+            var h = parseInt($this.offset().top , 10) + $this.height() * 4;
             if($this.is('.icon-mail-close')) {
                 $card.attr('data-state', 'ready');
             } else if($this.is('.icon-expand')) {
                 $card.attr('data-state', 'open3');
+                $(window).scrollTop(h);
             } else if($this.is('.icon-to3d')) {
                 $card.attr('data-state', 'open2');
             } else if($this.is('.icon-mail-open')) {
                 if($('.basic-mode').length) {
                     $card.attr('data-state', 'open3');
+                    $(window).scrollTop(h);
                 } else {
                     $card.attr('data-state', 'open1');
                 }

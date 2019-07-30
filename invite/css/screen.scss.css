@@ -65,7 +65,14 @@ body .container {
   background-size: 2em 2em;
   border-bottom: 6px solid brown;
   position: relative;
-  box-shadow: 2px 0 0 brown, -2px 0 0 brown, 3px 0 0 gold, -3px 0 0 gold, 6px 0 0 brown, -6px 0 0 brown; }
+  box-shadow: 2px 0 0 brown, -2px 0 0 brown, 3px 0 0 gold, -3px 0 0 gold, 6px 0 0 brown, -6px 0 0 brown;
+  transform-origin: center top; }
+  @media (orientation: landscape) and (max-height: 800px) {
+    body .container {
+      transform: scale(0.8); } }
+  @media (orientation: landscape) and (max-height: 600px) {
+    body .container {
+      transform: scale(0.6); } }
 
 body .zone {
   position: relative;
