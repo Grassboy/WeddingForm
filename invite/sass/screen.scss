@@ -96,7 +96,7 @@ html {
   //@include pattern2();
 }
 .basic-mode {
-    .text1, .text2, .arches, .pillar, .couple1, .card1 {
+    .group > .text1, .group > .text2, .arches, .pillar, .couple1, .card1 {
         display: none!important;
     }
 }

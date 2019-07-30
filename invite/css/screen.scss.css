@@ -5,7 +5,7 @@ html {
   background-blend-mode: multiply;
   background-attachment: fixed; }
 
-.basic-mode .text1, .basic-mode .text2, .basic-mode .arches, .basic-mode .pillar, .basic-mode .couple1, .basic-mode .card1 {
+.basic-mode .group > .text1, .basic-mode .group > .text2, .basic-mode .arches, .basic-mode .pillar, .basic-mode .couple1, .basic-mode .card1 {
   display: none !important; }
 
 body {
