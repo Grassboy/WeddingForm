@@ -105,7 +105,7 @@ $(function(){
                 setTimeout(function(){
                     $card.attr('data-state', 'ready');
                     $('.text-group').addClass('active');
-                }, 1000);
+                }, 2000);
             }
         });
     });
