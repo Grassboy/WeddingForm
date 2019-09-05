@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <title>Grassboy & Amber 婚禮小程式</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Two+Tone" />
+    <link href="./css/screen.scss.css?cb" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script src="http://localhost:35729/livereload.js" type="text/javascript"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="load-image.all.min.js" type="text/javascript"></script>
+
+	<meta name="description" content="這裡是 Grassboy & Amber 婚禮專用小程式，歡迎利用此頁面給我們祝福或是參加驚喜小活動喲" />
+    <meta name="author" content="小胖子．吳草兒 Grassboy">
+    <meta id="theme_color" name="theme-color" content="">
+	<meta property="og:url" content="https://amber.grassboy.tw/app" />
+    <meta property="og:title" content="Grassboy &amp; Amber 婚禮出席統計">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Grassboy Amber App">
+    <meta property="og:image" content="https://amber.grassboy.tw/survey/img/og_img.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="這裡是 Grassboy & Amber 婚禮專用小程式，歡迎利用此頁面給我們祝福或是參加驚喜小活動喲">
+    <meta property="og:ttl" content="604800">
+
+	<meta property="fb:admins" content="663898857" />
+    <link rel="canonical" href="https://amber.grassboy.tw/app" />
+    
+
+  </head>
+  <body class="">
+    <div class="user-profile">
+        <div class="toolbar">
+            <span class="toolbar-link at-right update-user" style="display: none;"><i class="material-icons">done</i>儲存</span>
+            <span class="toolbar-link at-right add-guestbook"><i class="material-icons">done</i>送出</span> 
+        </div>
+        <div class="user-avatar-outer">
+            <div class="user-avatar" data-imgur="jg0PTNZ">
+                <img class="user-avatar-img" src="https://i.imgur.com/jg0PTNZ.png" />
+                <canvas class="user-avatar-editing" width="140" height="140"></canvas>
+            </div>
+            <span class="round-button back-home">
+                <i class="material-icons">arrow_back_ios</i>
+            </span>
+            <span class="round-button change-avatar">
+                <input id="avatar-file" type="file" name="avatar-file" />
+                <i class="material-icons">edit</i>
+            </span>
+            <span class="avatar-text user_relation"></span>
+            <span class="avatar-text user_name"></span>
+        </div>
+        <ul class="user-info-list">
+            <li class="user-info-item">
+                <em>姓名</em><span class="input-outer"><input placeholder="請輸入姓名" id="user_name" type="text" /></span>
+            </li>
+            <li class="user-info-item">
+                <em>與新人關係</em><span class="input-outer"><select id="user_relation" name="">
+                    <option>請選擇</option>
+                    <optgroup label="新娘的…">
+                        <option value="Amber 的親戚">Amber 的親戚</option>
+                        <option value="Amber 的同學">Amber 的同學</option>
+                        <option value="Amber 的學長姐、學弟妹">Amber 的學長姐、學弟妹</option>
+                        <option value="Amber 的同事">Amber 的同事</option>
+                        <option value="Amber 的前同事">Amber 的前同事</option>
+                        <option value="怡安媽媽的同學">怡安媽媽的同學</option>
+                        <option value="怡安媽媽的朋友">怡安媽媽的朋友</option>
+                        <option value="怡安媽媽的同事">怡安媽媽的同事</option>
+                        <option value="我和 Amber 的關係有點複雜">我和怡安的關係有點複雜</option>
+                    </optgroup>
+                    <optgroup label="新郎的…">
+                        <option value="嘉祥的親戚">嘉祥的親戚</option>
+                        <option value="嘉祥爸爸的同事">嘉祥爸爸的同事</option>
+                        <option value="Grassboy 的同事">Grassboy 的同事</option>
+                        <option value="Grassboy 的研究所同學">Grassboy 的研究所同學</option>
+                        <option value="Grassboy 的大學同學">Grassboy 的大學同學</option>
+                        <option value="Grassboy 的高中同學">Grassboy 的高中同學</option>
+                        <option value="Grassboy 的國中國小同學">Grassboy 的國中國小同學</option>
+                        <option value="大腳丫康輔工作坊">大腳丫康輔工作坊</option>
+                        <option value="板中資訊社">板中資訊社</option>
+                        <option value="FIFA世界盃">FIFA世界盃</option>
+                        <option value="我和 Grassboy 的關係有點複雜">我和 Grassboy 的關係有點複雜</option>
+                    </optgroup>
+                </select></span>
+            </li>
+        </ul>
+    </div>
+    <ul class="page-list">
+        <li class="page-item" data-page="guestbook">
+            <i class="material-icons">post_add</i>
+            <span>公開留言</span>
+        </li>
+        <li class="page-item" data-page="secret-event">
+            <i class="material-icons">new_releases</i>
+            <span>秘密活動</span>
+        </li>
+    </ul>
+    <div class="page-body guestbook">
+        <div class="page-body-inside">
+            <h1>我要留言</h1>
+            <section class="intro">
+                有什麼話想要留言給 Grassboy / Amber 的嗎？<br />
+                或是有什麼話想和其他賓客說的嗎？<br />
+                在這裡輸入您的留言，我們會幫您打上大螢幕喲！<br />
+            </section>
+            <textarea class="guestbook-input" placeholder="(請輸入留言...)"></textarea>
+        </div>
+    </div>
+    <div class="page-body secret-event">
+        <div class="page-body-inside">
+            <h1>不知道比較好的<em>冷知識</em>！</h1>
+            <section class="intro">
+                <p class="quote">有些事情，不知道比較好XDD</p>
+                <p>
+                    相信各位親朋好友，<br />
+                    應該對於新人之間的愛戀糾葛瞭若指掌(自以為XD)<br />
+                    不過，我們相信，<br />
+                    應該還有關於草哥和安柏間的冷知識，等待大家發掘！<br />
+                    因為答案可能會讓大家白眼翻到天邊，<br />
+                    所以，此次活動命名為「不知道比較好的冷知識」(被打飛)
+                </p>
+                <p>
+                    <h2>活動辦法</h2>
+                    此為有獎徵答活動，<br />
+                    測驗的是平常您對新人之間的瞭解程度，<br />
+                    出題範圍包山包海，所以不勉強大家準備，<br />
+                    但如果您不小心剛好知道、又剛好答對<br />
+                    為補償您白眼可能翻不回來的風險，<br />
+                    <em>草哥&安柏也準備一點小禮物進行抽獎，</em><br />
+                    歡迎大家參與喲！
+                </p>
+            </section>
+            <section class="question-area">
+                <section class="question-body">
+                    <h2>第一題</h2>
+                    <p>
+                    (送分題) 草哥和 Amber 的交往紀念日是幾月幾日？
+                    </p>
+                    <section class="correct-area"></section>
+                </section>
+                <h3>請作答</h3>
+                <div class="answer-outer">
+                    <section class="answer-body">
+                        <section class="answer-item" data-answer="A"></section>
+                        <section class="answer-item" data-answer="B"></section>
+                        <section class="answer-item" data-answer="C"></section>
+                        <section class="answer-item" data-answer="D"></section>
+                    </section>
+                </div>
+                <div class="how-to-answer">
+                    <div class="qr-code"></div>
+                    加 Line ID <em>@187rmuzy</em>或直接掃條碼加入我們的官方帳號，並隨便丟訊息給他，就能夠開始答題囉！
+                </div>
+            </section>
+            <ul class="question-list">
+                <li class="question-item" data-qid="1">
+                    <i class="material-icons-two-tone">filter_1</i>
+                    <span>第一題</span>
+                    <i class="material-icons state-icon now-playing">play_circle_filled</i>
+                    <i class="material-icons state-icon fobidden">remove_circle</i>
+                    <i class="material-icons state-icon winner">emoji_events</i>
+                </li>
+                <li class="question-item" data-qid="2">
+                    <i class="material-icons-two-tone">filter_2</i>
+                    <span>第二題</span>
+                    <i class="material-icons state-icon now-playing">play_circle_filled</i>
+                    <i class="material-icons state-icon fobidden">remove_circle</i>
+                    <i class="material-icons state-icon winner">emoji_events</i>
+                </li>
+                <li class="question-item" data-qid="3">
+                    <i class="material-icons-two-tone">filter_3</i>
+                    <span>第三題</span>
+                    <i class="material-icons state-icon now-playing">play_circle_filled</i>
+                    <i class="material-icons state-icon fobidden">remove_circle</i>
+                    <i class="material-icons state-icon winner">emoji_events</i>
+                </li>
+                <li class="question-item" data-qid="4">
+                    <i class="material-icons-two-tone">filter_4</i>
+                    <span>第四題</span>
+                    <i class="material-icons state-icon now-playing">play_circle_filled</i>
+                    <i class="material-icons state-icon fobidden">remove_circle</i>
+                    <i class="material-icons state-icon winner">emoji_events</i>
+                </li>
+                <li class="question-item" data-qid="5">
+                    <i class="material-icons-two-tone">filter_5</i>
+                    <span>第五題</span>
+                    <i class="material-icons state-icon now-playing">play_circle_filled</i>
+                    <i class="material-icons state-icon fobidden">remove_circle</i>
+                    <i class="material-icons state-icon winner">emoji_events</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="avatar-box">
+        <label for="avatar-file">
+        <li class="default-avatar from-camera" data-imgur="kaouhMm">
+            <i></i>
+        </li></label>
+        <li class="default-avatar" data-imgur="AK714UN"><i></i></li>
+        <li class="default-avatar" data-imgur="9ByUUtx"><i></i></li>
+        <li class="default-avatar" data-imgur="jg0PTNZ"><i></i></li>
+        <li class="default-avatar" data-imgur="DgcTnc3"><i></i></li>
+        <li class="default-avatar" data-imgur="SSNPpBU"><i></i></li>
+    </ul>
+    <div class="avatar-modal modal">
+        <span class="round-button update-avatar">
+            <i class="material-icons">done</i>
+        </span>
+        <span class="round-button cancel-avatar">
+            <i class="material-icons">close</i>
+        </span>
+        <div class="crop-zone">
+            <div class="crop-zone-inside draggable" data-dragtype="move"></div>
+            <div class="crop-zone-corner draggable corner-lt" data-dragtype="lt"></div>
+            <div class="crop-zone-corner draggable corner-rt" data-dragtype="rt"></div>
+            <div class="crop-zone-corner draggable corner-lb" data-dragtype="lb"></div>
+            <div class="crop-zone-corner draggable corner-rb" data-dragtype="rb"></div>
+        </div>
+    </div>
+    <div class="loading-modal modal">
+        <div class="loading-circle"></div>
+        <em>讀取中，請稍候</em>
+    </div>
+    <script src="controller.js?412"></script>
+  </body>
+</html>

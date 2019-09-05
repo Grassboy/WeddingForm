@@ -1,0 +1,84 @@
+// pattern mixin
+// ref: https://codepen.io/mariiinda/pen/dtehw
+@mixin pattern($bg-primary,$bg-secondary) {
+  background:
+    repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 1em,
+    rgba($bg-secondary,0.4) 0,
+    rgba($bg-secondary,0.1) 2em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-secondary,0.3) 0,
+    rgba($bg-secondary,0.2) 4em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-primary,0.6) 0,
+    rgba($bg-primary,0.2) 2em
+  ),
+  repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 1em,
+    rgba($bg-secondary,0.4) 0,
+    rgba($bg-secondary,0.1) 2em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-secondary,0.3) 0,
+    rgba($bg-secondary,0.2) 4em,
+    transparent 0,
+    transparent 1em,
+    rgba($bg-primary,0.4) 0,
+    rgba($bg-primary,0.1) 2em
+  ), $bg-primary;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+@mixin pattern2(
+    $color1: rgb(178, 206, 254),
+    $color2: rgb(186, 237, 145),
+    $color3: rgb(242, 162, 232),
+    $color4: rgb(248, 184, 139),
+    $color5: rgb(250, 248, 132),
+    $color6: rgb(254, 163, 170)
+) {   
+    background: 
+        linear-gradient(180deg, rgba($color4,0) 20%, rgba($color4,.1) 20%, rgba($color4,.1) 40%, rgba($color4,.2) 40%, rgba($color4,.2) 60%, rgba($color4,.4) 60%, rgba($color4,.4) 80%, rgba($color4,.5) 80%),
+        linear-gradient(45deg, rgba($color5,.3) 20%, rgba($color5,.4) 20%, rgba($color5,.4) 40%, rgba($color5,.5) 40%, rgba($color5,.5) 60%, rgba($color5,.6) 60%, rgba($color5,.6) 80%, rgba($color5,.7) 80%),
+        linear-gradient(-45deg, rgba($color2,0) 20%, rgba($color2,.1) 20%, rgba($color2,.1) 40%, rgba($color2,.2) 40%, rgba($color2,.2) 60%, rgba($color2,.4) 60%, rgba($color2,.4) 80%, rgba($color2,.6) 80%),
+        linear-gradient(90deg, rgba($color1,0) 20%, rgba($color1,.3) 20%, rgba($color1,.3) 40%, rgba($color1,.5) 40%, rgba($color1,.5) 60%, rgba($color1,.7) 60%, rgba($color1,.7) 80%, rgba($color1,.8) 80%),
+        linear-gradient(-90deg, rgba($color3,0) 20%, rgba($color3,.4) 20%, rgba($color3,.4) 40%, rgba($color3,.5) 40%, rgba($color3,.5) 60%, rgba($color3,.6) 60%, rgba($color3,.6) 80%, rgba($color3,.8) 80%),
+        linear-gradient(180deg, rgba($color6,0) 20%, rgba($color6,.4) 20%, rgba($color6,.4) 40%, rgba($color6,.6) 40%, rgba($color6,.6) 60%, rgba($color6,.8) 60%, rgba($color6,.8) 80%, rgba($color6,.9) 80%)
+    ;
+    background-color: $color6;
+    background-size: 100% 100%;
+    min-height: 100%;
+}
+@mixin pattern3(
+    $color1: #FFF,
+    $color2: #a4a4a4,
+    $color3: rgba(black, 0.3) 
+) {
+  background: 
+    radial-gradient($color3 3px, transparent 4px),
+    radial-gradient($color3 3px, transparent 4px),
+    linear-gradient($color1 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, $color2 75px, $color2 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, $color2 76px, $color2 77px, transparent 78px, transparent 109px),
+  $color1;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+@mixin pattern4(
+    $color1: white,
+    $color2: black,
+    $size: 2em
+) {
+    background:
+    linear-gradient(-45deg, $color1 25%, transparent 25%, transparent 75%, $color2 75%, $color2) 0 0,
+    linear-gradient(-45deg, $color2 25%, transparent 25%, transparent 75%, $color1 75%, $color1) 1em 1em,
+    linear-gradient(45deg, $color2 17%, transparent 17%, transparent 25%, $color2 25%, $color2 36%, transparent 36%, transparent 64%, $color2 64%, $color2 75%, transparent 75%, transparent 83%, $color2 83%) 1em 1em;
+    background-color: $color1;
+    background-size: $size $size;
+}
