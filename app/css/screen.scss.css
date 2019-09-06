@@ -728,7 +728,8 @@ html {
     font-size: 4em; }
   .big-screen .total-summary-box.active {
     visibility: visible;
-    opacity: 1; }
+    opacity: 1;
+    z-index: 100; }
   .big-screen .total-summary-box .summary-item {
     flex: 0.1 1 auto;
     font-size: 3em;
@@ -826,5 +827,8 @@ html {
         max-width: 14em !important; }
       .big-screen .total-summary-box .summary-draw-area .answer-avatar:after {
         font-size: 2.5em !important; }
+
+.big-screen .user-avatar-cache {
+  display: none; }
 
 /*# sourceMappingURL=../sourcemap/screen.scss.css.map */

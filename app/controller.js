@@ -76,7 +76,7 @@ $(function(){
                 $body.addClass('in-page').attr('data-page', 'secret-event');
                 updateUser(r.rsp.user);
                 updateQuestionList(r.rsp.now_qid);
-                updateQuestionBody(r.rsp.question, quick_ans[1]*1);
+                updateQuestionBody(r.rsp.question, r.rsp.now_qid);
                 if(!$body.is('.big-screen')) alert('您已作答完畢！在公佈正確答案前，您可不斷重新作答喲！');
             } else {
                 alert(r.msg);
@@ -254,6 +254,7 @@ $(function(){
             $body.removeClass('show-avatar-box');
         }
     });
+    
 });
 
 (function attachDraggable(){
