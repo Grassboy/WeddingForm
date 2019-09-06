@@ -254,7 +254,6 @@ $(function(){
             $body.removeClass('show-avatar-box');
         }
     });
-    
 });
 
 (function attachDraggable(){
